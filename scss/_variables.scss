@@ -7,15 +7,15 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-100: #eceeef !default;
+$gray-200: #d9dddf !default;
+$gray-300: #c6cccf !default;
+$gray-400: #b3bbbf !default;
+$gray-500: #a1aaaf !default;
+$gray-600: #8e989e !default;
+$gray-700: #7b878e !default;
+$gray-800: #55656e !default;
+$gray-900: #68767e !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -36,16 +36,16 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
+$blue:    #63A5BF !default;
+$indigo:  #8f1457ff !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$red:     #b51f24 !default;
+$orange:  #F2762E !default;
+$yellow:  #F2EA7E !default;
+$green:   #A0C4A0 !default;
+$teal:    #026773 !default;
+$cyan:    #07748C !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
@@ -298,11 +298,11 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
-$secondary:     $gray-600 !default;
+$primary:       $gray-900 !default;
+$secondary:     #BF610F !default;
 $success:       $green !default;
 $info:          $cyan !default;
-$warning:       $yellow !default;
+$warning:       #ff7500 !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
@@ -451,7 +451,7 @@ $body-emphasis-color:       $black !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
@@ -603,7 +603,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      proxima-nova, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -719,7 +719,7 @@ $list-inline-padding:         .5rem !default;
 
 $mark-padding:                .1875em !default;
 $mark-color:                  $body-color !default;
-$mark-bg:                     $yellow-100 !default;
+$mark-bg:                     #edf4ec !default;
 // scss-docs-end type-variables
 
 
@@ -1749,3 +1749,57 @@ $nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, remo
 $pre-color:                         null !default;
 
 @import "variables-dark"; // TODO: can be removed safely in v6, only here to avoid breaking changes in v5.3
+
+// crebridge custom
+@import url("https://use.typekit.net/iic0loo.css");
+textarea { height: auto; }
+
+label.required:after {
+  content: "*";
+}
+
+.field_with_errors {
+  color: $primary;
+}
+
+li::marker { color: #8f9e9f; }
+
+#map { height: 1100px; }
+
+// Badges
+.badge {
+  &.archived, &.mii, &.ppno,&.noscore { background-color: #C3D8D9; color: #261C26; }
+  &.beige { background-color: #2e2424; color: #F2EADF; }
+  &.dormant  { background-color: #e8ebec; color: #261C26; }
+  &.open { background-color: #BF610F ; color: #fff; }
+  &.sponsored { background-color: $teal; color: #fff; }
+  &.unsponsored { background-color: #6f573d; color: #F2EADF; }
+  &.nogo,&.student { background-color: $red; color: #fff; }
+  &.refresh { background-color: #f97e33; color: #fff; }
+  &.drive { background-color: $green; color: #fff; }
+  &.refined { background-color: #cce1e3; color: #4e959d; }
+  &.raw { background-color: #fad99b; color: #f29f05; }
+
+}
+
+.bg {
+  &-sponsored,&.sponsored {
+    color: $teal;
+    background-color: #b3d1d5; }
+  &-open,&.open {
+    color: #BF610F ;
+    background-color: #f2dfcf;
+  }
+  &-fuego,&.fuego {
+    color: $orange;
+    background-color: rgba(255, 102, 0, .25); }
+  &-dormant,&.dormant,&-unsponsored  {
+    color:#42545E;
+    background-color: rgba(135, 150, 180, .25); }
+  &-nogo,&.nogo {
+      color: $red;
+      background-color: #f0d2d3; }
+  &-unsponsored,&.unsponsored {
+        color: #6f573d;
+        background-color: #F2EADF; }
+}

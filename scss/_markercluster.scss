@@ -1,0 +1,65 @@
+// $background-color_1: rgba(162, 51, 55, 0.6);
+$background-color_1: $orange;
+$background-color_2: #f98e4d;
+
+/* IE 6-8 fallback colors */
+.marker-cluster-small {
+	background-color: $background-color_1;
+	div {
+		background-color: $background-color_2;
+    color: white !important;  /* Ensure text color is white */
+	}
+}
+.marker-cluster-medium {
+	background-color: $background-color_1;
+	div {
+		background-color: $background-color_2;
+    color: white !important;  /* Ensure text color is white */
+	}
+}
+.marker-cluster-large {
+	background-color: $background-color_1;
+	div {
+		background-color: $background-color_2;
+    color: white !important;  /* Ensure text color is white */
+	}
+}
+
+.marker-cluster {
+	background-clip: padding-box;
+	border-radius: 20px;
+	div {
+		width: 30px;
+		height: 30px;
+		margin-left: 5px;
+		margin-top: 5px;
+		text-align: center;
+		border-radius: 15px;
+		font: 12px;
+	}
+	span {
+		line-height: 30px;
+	}
+}
+
+
+.leaflet-cluster-anim {
+	.leaflet-marker-icon {
+		-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+		-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+		-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+		transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+	}
+	.leaflet-marker-shadow {
+		-webkit-transition: -webkit-transform 0.3s ease-out, opacity 0.3s ease-in;
+		-moz-transition: -moz-transform 0.3s ease-out, opacity 0.3s ease-in;
+		-o-transition: -o-transform 0.3s ease-out, opacity 0.3s ease-in;
+		transition: transform 0.3s ease-out, opacity 0.3s ease-in;
+	}
+}
+.leaflet-cluster-spider-leg {
+	-webkit-transition: -webkit-stroke-dashoffset 0.3s ease-out, -webkit-stroke-opacity 0.3s ease-in;
+	-moz-transition: -moz-stroke-dashoffset 0.3s ease-out, -moz-stroke-opacity 0.3s ease-in;
+	-o-transition: -o-stroke-dashoffset 0.3s ease-out, -o-stroke-opacity 0.3s ease-in;
+	transition: stroke-dashoffset 0.3s ease-out, stroke-opacity 0.3s ease-in;
+}

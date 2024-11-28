@@ -7,15 +7,15 @@
 
 // scss-docs-start gray-color-variables
 $white:    #fff !default;
-$gray-100: #f8f9fa !default;
-$gray-200: #e9ecef !default;
-$gray-300: #dee2e6 !default;
-$gray-400: #ced4da !default;
-$gray-500: #adb5bd !default;
-$gray-600: #6c757d !default;
-$gray-700: #495057 !default;
-$gray-800: #343a40 !default;
-$gray-900: #212529 !default;
+$gray-100: #eceeef !default;
+$gray-200: #d9dddf !default;
+$gray-300: #b3bbbf !default;
+$gray-400: #a1aaaf !default;
+$gray-500: #8e989e !default;
+$gray-600: #7b878e !default;
+$gray-700: #68767e !default;
+$gray-800: #55656e !default;
+$gray-900: #42545e !default;
 $black:    #000 !default;
 // scss-docs-end gray-color-variables
 
@@ -36,24 +36,24 @@ $grays: (
 // fusv-enable
 
 // scss-docs-start color-variables
-$blue:    #0d6efd !default;
-$indigo:  #6610f2 !default;
+$blue:    #63A5BF !default;
+$indigo:  #8f1457ff !default;
 $purple:  #6f42c1 !default;
 $pink:    #d63384 !default;
-$red:     #dc3545 !default;
-$orange:  #fd7e14 !default;
-$yellow:  #ffc107 !default;
-$green:   #198754 !default;
-$teal:    #20c997 !default;
-$cyan:    #0dcaf0 !default;
+$red:     #F26052 !default;
+$orange:  #ff7500 !default;
+$yellow:  #F2EA7E !default;
+$green:   #6EA637 !default;
+$teal:    #026773 !default;
+$cyan:    #B4DBEF !default;
+$batman: #8898A8 !default;
+$espresso: #6f573d !default;
 // scss-docs-end color-variables
 
 // scss-docs-start colors-map
 $colors: (
   "blue":       $blue,
   "indigo":     $indigo,
-  "purple":     $purple,
-  "pink":       $pink,
   "red":        $red,
   "orange":     $orange,
   "yellow":     $yellow,
@@ -63,7 +63,9 @@ $colors: (
   "black":      $black,
   "white":      $white,
   "gray":       $gray-600,
-  "gray-dark":  $gray-800
+  "gray-dark":  $gray-800,
+  "batman": $batman,
+  "espresso": $espresso
 ) !default;
 // scss-docs-end colors-map
 
@@ -298,11 +300,11 @@ $cyans: (
 // fusv-enable
 
 // scss-docs-start theme-color-variables
-$primary:       $blue !default;
+$primary:       $orange !default;
 $secondary:     $gray-600 !default;
 $success:       $green !default;
 $info:          $cyan !default;
-$warning:       $yellow !default;
+$warning:       $orange !default;
 $danger:        $red !default;
 $light:         $gray-100 !default;
 $dark:          $gray-900 !default;
@@ -451,7 +453,7 @@ $body-emphasis-color:       $black !default;
 // Style anchor elements.
 
 $link-color:                              $primary !default;
-$link-decoration:                         underline !default;
+$link-decoration:                         none !default;
 $link-shade-percentage:                   20% !default;
 $link-hover-color:                        shift-color($link-color, $link-shade-percentage) !default;
 $link-hover-decoration:                   null !default;
@@ -603,7 +605,7 @@ $aspect-ratios: (
 
 // scss-docs-start font-variables
 // stylelint-disable value-keyword-case
-$font-family-sans-serif:      system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
+$font-family-sans-serif:      proxima-nova, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji" !default;
 $font-family-monospace:       SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !default;
 // stylelint-enable value-keyword-case
 $font-family-base:            var(--#{$prefix}font-sans-serif) !default;
@@ -719,7 +721,7 @@ $list-inline-padding:         .5rem !default;
 
 $mark-padding:                .1875em !default;
 $mark-color:                  $body-color !default;
-$mark-bg:                     $yellow-100 !default;
+$mark-bg:                     rgba(255, 102, 0, .2) !default;
 // scss-docs-end type-variables
 
 
@@ -1491,7 +1493,7 @@ $badge-font-weight:                 $font-weight-bold !default;
 $badge-color:                       $white !default;
 $badge-padding-y:                   .35em !default;
 $badge-padding-x:                   .65em !default;
-$badge-border-radius:               var(--#{$prefix}border-radius) !default;
+$badge-border-radius:               none !default;
 // scss-docs-end badge-variables
 
 
@@ -1749,3 +1751,46 @@ $nested-kbd-font-weight:            null !default; // Deprecated in v5.2.0, remo
 $pre-color:                         null !default;
 
 @import "variables-dark"; // TODO: can be removed safely in v6, only here to avoid breaking changes in v5.3
+
+// crebridge custom
+@import url("https://use.typekit.net/oxe1jky.css");
+
+// Badges
+.badge {
+  &.archived { background-color: #C3D8D9; }
+  &.espresso { background-color: #2e2424; color: #fff; }
+  &.fresh { background-color: rgb(228, 220, 245); color: #40237cff; }
+  &.accepted, &.pass { background-color: rgb(215, 234, 224); color: #315e46ff; }
+  &.followup, &.fail { background-color: $yellow; color: $teal; }
+  &.rejected, &.nogo { background-color: rgb(250, 219, 236); color: $indigo; }
+  &.offer { background-color: $teal; }
+  &.place, &.mii, &.admin  { background-color: rgba(135, 150, 180, .3); color: $batman; }
+  &.adp, &.manage { background-color: rgb(215, 234, 224); color: $green; }
+  &.fuego, &.recruit { background-color: rgba(255, 102, 0, .25); color: $orange; }
+}
+
+.bg {
+  &-fresh {
+    color: $indigo;
+    background-color: rgb(228, 220, 245); }
+  &-accepted, &-pass {
+    color: $teal;
+    background-color: rgb(215, 234, 224); }
+  &-followup, &-fail {
+    color: $teal;
+    background-color: rgba(240, 230, 125, .25); }
+  &-rejected, &-fuego {
+    color: $orange;
+    background-color: rgba(255, 102, 0, .25); }
+  &-offer {
+    color: $teal;
+    background-color: rgba(2, 100, 115, .25); }
+  &-place, &-mii,  {
+    color:#42545E;
+    background-color: rgba(135, 150, 180, .25); }
+}
+
+
+textarea { height: auto; }
+
+

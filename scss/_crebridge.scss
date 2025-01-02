@@ -1,0 +1,31 @@
+// custom variables for crebridge app
+
+$mark-primary-bg: rgba(255, 102, 0, .2) !default; // Original mark-bg
+$mark-success-bg: rgba(72, 187, 120, .2) !default; // Green background
+$mark-danger-bg: rgba(220, 53, 69, .2) !default; // Red background
+$mark-info-bg: rgba(23, 162, 184, .2) !default; // Teal background
+
+
+.mark-primary {
+  padding: $mark-padding;
+  color: $mark-color;
+  background-color: $mark-primary-bg;
+}
+
+.mark-success {
+  padding: $mark-padding;
+  color: $mark-color;
+  background-color: $mark-success-bg;
+}
+
+.mark-danger {
+  padding: $mark-padding;
+  color: $mark-color;
+  background-color: $mark-danger-bg;
+}
+
+.mark-info {
+  padding: $mark-padding;
+  color: $mark-color;
+  background-color: $mark-info-bg;
+}
